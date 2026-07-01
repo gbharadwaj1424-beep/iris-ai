@@ -163,10 +163,10 @@ export function generateTrainingCurve(epochs = 40): MetricPoint[] {
 }
 
 export const team: TeamMember[] = [
-  { id: "1", name: "Aarav Mehta", role: "ML Systems Lead", focus: "Diffusion & ControlNet", initials: "AM" },
-  { id: "2", name: "Priya Nair", role: "Remote Sensing Lead", focus: "Sensor calibration & GIS", initials: "PN" },
-  { id: "3", name: "Kabir Singh", role: "Full-Stack Architect", focus: "Platform & infra", initials: "KS" },
-  { id: "4", name: "Sara Iyer", role: "Computer Vision Eng.", focus: "Segmentation & detection", initials: "SI" },
+  { id: "1", name: "Garv Bharadwaj", role: "ML Systems Lead", focus: "Diffusion & ControlNet", initials: "AM" },
+  { id: "2", name: "Meghna Pant", role: "Remote Sensing Lead", focus: "Sensor calibration & GIS", initials: "PN" },
+  { id: "3", name: "Rakshak Minhas", role: "Full-Stack Architect", focus: "Platform & infra", initials: "KS" },
+  { id: "4", name: "Gayatri Dhasmana", role: "Computer Vision Eng.", focus: "Segmentation & detection", initials: "SI" },
 ];
 
 export const timeline: TimelineItem[] = [
