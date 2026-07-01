@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+* {
+  border-color: rgba(167, 192, 230, 0.12);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: #06080d;
+  color: #e9f1fb;
+  font-feature-settings: "ss01", "cv01";
+}
+
+::selection {
+  background: rgba(46, 230, 255, 0.25);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #06080d;
+}
+::-webkit-scrollbar-thumb {
+  background: #1b2333;
+  border-radius: 8px;
+  border: 2px solid #06080d;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3650;
+}
+
+:focus-visible {
+  outline: 2px solid #2ee6ff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------------------------------------------
+   Design system utility layer
+   --------------------------------------------------------- */
+@layer components {
+  .glass {
+    @apply bg-panel/60 backdrop-blur-xl border border-hairline;
+  }
+
+  .glass-strong {
+    @apply bg-panel-2/80 backdrop-blur-2xl border border-hairline;
+  }
+
+  .corner-frame {
+    position: relative;
+  }
+  .corner-frame::before,
+  .corner-frame::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: rgba(46, 230, 255, 0.5);
+    transition: border-color 0.3s ease;
+  }
+  .corner-frame::before {
+    top: -1px;
+    left: -1px;
+    border-top: 1.5px solid;
+    border-left: 1.5px solid;
+  }
+  .corner-frame::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 1.5px solid;
+    border-right: 1.5px solid;
+  }
+  .corner-frame:hover::before,
+  .corner-frame:hover::after {
+    border-color: rgba(46, 230, 255, 1);
+  }
+
+  .text-gradient {
+    background: linear-gradient(120deg, #e9f1fb 0%, #9fd9ff 45%, #2ee6ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .label-eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.28em] text-cyan/80;
+  }
+
+  .grid-overlay {
+    background-image: linear-gradient(rgba(167, 192, 230, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(167, 192, 230, 0.05) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  .noise-mask {
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  }
+}
